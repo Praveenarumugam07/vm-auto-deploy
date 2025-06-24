@@ -9,5 +9,5 @@ steps:
         gcloud secrets versions access latest --secret=vm-ssh-key > ~/.ssh/id_rsa
         chmod 400 ~/.ssh/id_rsa
         ssh-keyscan -H 34.93.165.244 >> ~/.ssh/known_hosts
-        scp -r main.py requirements.txt vmdeploy@<VM_EXTERNAL_IP>:/home/vmdeploy/
+        scp -r main.py requirements.txt vmdeploy@34.93.165.244:/home/vmdeploy/
         ssh vmdeploy@34.93.165.244 'pip3 install -r requirements.txt && pkill -f main.py || true && nohup python3 main.py > output.log 2>&1 &'
