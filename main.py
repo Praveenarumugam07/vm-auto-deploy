@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "🚀 Auto Deployed Flask App on VM using Cloud Build!"
+    return "🚀 Auto Deployed Flask App on VM using Cloud Build pr!"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)
